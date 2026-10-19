@@ -424,21 +424,28 @@
     }
 
     .hero-card {
-      width: 82%;
-      max-width: 340px;
-      min-height: 365px;
-      padding: 28px;
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid rgba(255,255,255,.8);
-      border-radius: 26px;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 25px 65px rgba(7,28,66,.22);
-    }
+  width: 82%;
+  max-width: 340px;
+  min-height: 365px;
+  padding: 28px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.8);
+  border-radius: 26px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7,28,66,.10) 0%,
+      rgba(7,28,66,.10) 40%,
+      rgba(7,28,66,.85) 100%
+    ),
+    url("dra.jpg") center center / cover no-repeat;
+  box-shadow: 0 25px 65px rgba(7,28,66,.22);
+}
 
     .hero-card-top {
       display: flex;
@@ -1595,15 +1602,6 @@
               <div class="hero-symbol">F+</div>
               <span class="hero-card-tag">FONOAUDIOLOGIA</span>
             </div>
-
-            <div class="hero-card-art">
-              <img
-                src="dra.jpg"
-                alt="Dra. Elizabeth Siqueira de Oliveira"
-                class="hero-doctor-photo"
-              >
-            </div>
-
 
             <div>
               <h3>Uma voz, muitas possibilidades.</h3>
