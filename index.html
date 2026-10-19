@@ -512,7 +512,56 @@
   line-height: 1.6;
   text-shadow: 0 2px 8px rgba(0,0,0,.5);
 }
+.hero-card p {
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.6;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
 
+/* NOME DA DRA. ELIZABETH */
+.hero-doctor-name {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  max-width: 75%;
+  padding: 10px 14px;
+  text-align: right;
+  color: #fff;
+  background: rgba(7, 28, 66, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  z-index: 3;
+}
+
+.hero-doctor-name span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-bottom: 3px;
+}
+
+.hero-doctor-name strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.floating-bubble {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 17px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  color: var(--blue-dark);
+  font-size: 12px;
+  font-weight: 800;
+}
     .floating-bubble {
       position: absolute;
       z-index: 2;
@@ -1234,9 +1283,9 @@
       }
 
       .bubble-two {
-        right: 0;
-        bottom: 45px;
-      }
+  right: 0;
+  bottom: 15px;
+}
 
       .benefits-grid {
         grid-template-columns: 1fr;
@@ -1595,21 +1644,26 @@
         <div class="hero-visual reveal" aria-label="Ilustração sobre comunicação e cuidado">
           <div class="hero-orbit"></div>
 
-          <div class="floating-bubble bubble-one">
-            <span class="bubble-icon">♡</span>
-            <span>Cuidado individualizado</span>
-          </div>
+         <div class="floating-bubble bubble-one">
+  <span class="bubble-icon">♡</span>
+  <span>Cuidado individualizado</span>
+</div>
 
-          <div class="hero-card">
-            <div class="hero-card-top">
-              <span class="hero-card-tag">FONOAUDIOLOGIA</span>
-            </div>
+<div class="hero-card">
+  <div class="hero-card-top">
+    <span class="hero-card-tag">FONOAUDIOLOGIA</span>
+  </div>
 
-            <div>
-              <h3>Uma voz, muitas possibilidades.</h3>
-              <p>Desenvolvimento, comunicação e qualidade de vida.</p>
-            </div>
-          </div>
+  <div>
+    <h3>Uma voz, muitas possibilidades.</h3>
+    <p>Desenvolvimento, comunicação e qualidade de vida.</p>
+  </div>
+
+  <div class="hero-doctor-name">
+    <span>Dra.</span>
+    <strong>Elizabeth Siqueira de Oliveira</strong>
+  </div>
+</div>
 
           <div class="floating-bubble bubble-two">
             <span class="bubble-icon">✳</span>
