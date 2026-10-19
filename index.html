@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Fonoclin | Clínica de Fonoaudiologia em Itapetininga</title>
-  <meta name="description" content="Fonoclin — Clínica de Fonoaudiologia de Itapetininga. Atendimento especializado em audiologia, linguagem, fala, motricidade orofacial e aprendizagem.">
+  <meta name="description" content="Fonoclin — Clínica de Fonoaudiologia de Itapetininga. Atendimento em audiologia, exames auditivos, linguagem, fala, motricidade orofacial e aprendizagem.">
   <meta name="theme-color" content="#0756d8">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -164,13 +164,13 @@
     /* CABEÇALHO */
 
     .header {
-      height: 88px;
+      height: 100px;
       display: flex;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,.94);
+      background: rgba(255,255,255,.96);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(231,237,245,.85);
     }
@@ -186,13 +186,22 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 180px;
+      min-width: 0;
+      flex-shrink: 0;
     }
 
     .brand img {
       width: 61px;
       height: 61px;
       object-fit: contain;
+    }
+
+    /* Logo maior somente no cabeçalho */
+    .header .brand img {
+      width: 150px;
+      height: 82px;
+      object-fit: contain;
+      flex-shrink: 0;
     }
 
     .logo-fallback {
@@ -207,6 +216,12 @@
       font-size: 20px;
       font-weight: 800;
       border-radius: 15px;
+    }
+
+    .header .logo-fallback {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
     }
 
     .logo-name {
@@ -257,17 +272,22 @@
       border-radius: 12px;
       font-size: 24px;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
-    /* HERO */
+    /* HERO COM FOTO DA FACHADA */
 
     .hero {
       position: relative;
       padding: 88px 0 96px;
       background:
-        radial-gradient(ellipse at 90% 5%, rgba(18,184,173,.13), transparent 32%),
-        radial-gradient(ellipse at 0% 90%, rgba(7,86,216,.09), transparent 35%),
-        linear-gradient(135deg, #f8fbff 0%, #ffffff 55%, #f4fbff 100%);
+        linear-gradient(
+          100deg,
+          rgba(5, 24, 58, .93) 0%,
+          rgba(5, 40, 91, .84) 52%,
+          rgba(5, 55, 100, .55) 100%
+        ),
+        url("banner.jpg") center 48% / cover no-repeat;
       overflow: hidden;
     }
 
@@ -278,10 +298,10 @@
       height: 400px;
       right: -180px;
       bottom: -240px;
-      border: 1px solid rgba(7,86,216,.13);
+      border: 1px solid rgba(255,255,255,.18);
       border-radius: 50%;
-      box-shadow: 0 0 0 40px rgba(7,86,216,.025),
-                  0 0 0 80px rgba(7,86,216,.02);
+      box-shadow: 0 0 0 40px rgba(255,255,255,.035),
+                  0 0 0 80px rgba(255,255,255,.025);
       pointer-events: none;
     }
 
@@ -296,14 +316,15 @@
 
     .hero .eyebrow {
       padding: 9px 14px;
-      border: 1px solid #dce9ff;
-      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.10);
       border-radius: 50px;
       letter-spacing: 1.2px;
+      color: #ffffff;
     }
 
     .hero h1 {
-      color: var(--blue-dark);
+      color: #ffffff;
       font-size: clamp(39px, 5vw, 60px);
       letter-spacing: -2.5px;
       font-weight: 800;
@@ -311,7 +332,7 @@
     }
 
     .hero h1 span {
-      color: var(--blue);
+      color: #79eee1;
       position: relative;
     }
 
@@ -326,7 +347,7 @@
     }
 
     .hero-description {
-      color: var(--muted);
+      color: #e3ecf8;
       font-size: 17px;
       max-width: 510px;
       margin-bottom: 30px;
@@ -338,12 +359,22 @@
       gap: 12px;
     }
 
+    .hero .btn-outline {
+      color: #ffffff;
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.55);
+    }
+
+    .hero .btn-outline:hover {
+      background: rgba(255,255,255,.17);
+    }
+
     .hero-note {
       display: flex;
       align-items: center;
       gap: 12px;
       margin-top: 34px;
-      color: var(--muted);
+      color: #e3ecf8;
       font-size: 12px;
       font-weight: 600;
     }
@@ -373,7 +404,7 @@
       width: min(410px, 100%);
       aspect-ratio: 1;
       border-radius: 50%;
-      background: linear-gradient(145deg, #dff7f5, #dbe9ff);
+      background: linear-gradient(145deg, rgba(223,247,245,.88), rgba(219,233,255,.88));
       position: absolute;
       right: 0;
     }
@@ -383,13 +414,13 @@
       content: "";
       position: absolute;
       border-radius: 50%;
-      border: 1px solid rgba(7,86,216,.14);
+      border: 1px solid rgba(255,255,255,.32);
       inset: -20px;
     }
 
     .hero-orbit::after {
       inset: -40px;
-      border-color: rgba(18,184,173,.14);
+      border-color: rgba(18,184,173,.4);
     }
 
     .hero-card {
@@ -404,9 +435,9 @@
       justify-content: space-between;
       border: 1px solid rgba(255,255,255,.8);
       border-radius: 26px;
-      background: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.92);
       backdrop-filter: blur(14px);
-      box-shadow: 0 25px 65px rgba(7,28,66,.14);
+      box-shadow: 0 25px 65px rgba(7,28,66,.22);
     }
 
     .hero-card-top {
@@ -1074,6 +1105,11 @@
         font-size: 12px;
       }
 
+      .header .brand img {
+        width: 125px;
+        height: 74px;
+      }
+
       .hero-grid {
         gap: 30px;
       }
@@ -1094,16 +1130,12 @@
       }
 
       .header {
-        height: 76px;
+        height: 82px;
       }
 
-      .brand img {
-        width: 53px;
-        height: 53px;
-      }
-
-      .logo-name {
-        font-size: 21px;
+      .header .brand img {
+        width: 120px;
+        height: 68px;
       }
 
       .menu-toggle {
@@ -1113,7 +1145,7 @@
       .nav {
         display: none;
         position: absolute;
-        top: 75px;
+        top: 81px;
         left: 0;
         right: 0;
         padding: 22px 25px 26px;
@@ -1139,6 +1171,7 @@
 
       .hero {
         padding: 65px 0 75px;
+        background-position: center center;
       }
 
       .hero-grid {
@@ -1295,6 +1328,19 @@
 
       .section-heading {
         margin-bottom: 34px;
+      }
+
+      .header {
+        height: 76px;
+      }
+
+      .header .brand img {
+        width: 105px;
+        height: 62px;
+      }
+
+      .nav {
+        top: 75px;
       }
 
       .hero {
@@ -1456,6 +1502,7 @@
   <!-- CABEÇALHO -->
   <header class="header">
     <div class="container header-inner">
+
       <a href="#inicio" class="brand" aria-label="Fonoclin - página inicial">
         <img
           src="logo.png"
@@ -1463,13 +1510,15 @@
           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
         >
         <span class="logo-fallback">F+</span>
-        <span>
-          <span class="logo-name">Fonoclin</span>
-          <span class="logo-subtitle">CLÍNICA DE FONOAUDIOLOGIA</span>
-        </span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
         ☰
       </button>
 
@@ -1479,7 +1528,13 @@
         <a href="#clinica">A clínica</a>
         <a href="#profissional">A profissional</a>
         <a href="#contato">Contato</a>
-        <a class="btn btn-primary" href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20Fonoclin." target="_blank" rel="noopener noreferrer">
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20Fonoclin."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Agendar atendimento ↗
         </a>
       </nav>
@@ -1491,6 +1546,7 @@
     <!-- INÍCIO -->
     <section class="hero" id="inicio">
       <div class="container hero-grid">
+
         <div class="hero-copy reveal">
           <span class="eyebrow">Cuidado que transforma</span>
 
@@ -1506,9 +1562,15 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer">
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Converse com a clínica <span>↗</span>
             </a>
+
             <a class="btn btn-outline" href="#especialidades">
               Conheça as especialidades ↓
             </a>
@@ -1549,12 +1611,14 @@
             <span>Escuta e acolhimento</span>
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- BENEFÍCIOS -->
     <section class="benefits" aria-label="Diferenciais">
       <div class="container benefits-grid">
+
         <div class="benefit">
           <span class="benefit-icon">♡</span>
           <div>
@@ -1578,59 +1642,67 @@
             <small>Clínica no centro da cidade</small>
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- ESPECIALIDADES -->
     <section class="section specialties" id="especialidades">
       <div class="container">
+
         <div class="section-heading reveal">
           <span class="eyebrow">Como podemos ajudar</span>
-          <h2>Áreas de atuação</h2>
+          <h2>Serviços e Especialidades</h2>
           <p>
-            A fonoaudiologia acompanha diferentes aspectos da comunicação,
-            da audição, da fala e das funções orais.
+            Conheça as áreas de atuação da Fonoclin, com atenção à audição,
+            à comunicação, ao desenvolvimento da fala e às necessidades
+            individuais de cada paciente.
           </p>
         </div>
 
         <div class="specialty-grid">
+
           <article class="specialty-card reveal">
             <span class="specialty-number">01</span>
-            <div class="specialty-icon">♬</div>
-            <h3>Audiologia</h3>
+            <div class="specialty-icon">♫</div>
+            <h3>Audiologia e Exames</h3>
             <p>
-              Área dedicada à audição, à avaliação auditiva e ao acompanhamento
-              das necessidades relacionadas à percepção dos sons.
+              Atuação em audiologia, incluindo triagem auditiva neonatal
+              (teste da orelhinha), acufenometria, reabilitação vestibular,
+              treinamento auditivo e mapeamento visível da fala.
             </p>
           </article>
 
           <article class="specialty-card reveal">
             <span class="specialty-number">02</span>
-            <div class="specialty-icon">☷</div>
-            <h3>Linguagem</h3>
+            <div class="specialty-icon">◉</div>
+            <h3>Tecnologia e Aparelhos Auditivos</h3>
             <p>
-              Acompanhamento do desenvolvimento da compreensão e da expressão
-              da linguagem, oral ou escrita, conforme a necessidade.
+              Informações sobre aparelhos auditivos recarregáveis e
+              tecnologias de avaliação, incluindo o equipamento
+              Optimus Premium para avaliação otoneurológica.
             </p>
           </article>
 
           <article class="specialty-card reveal">
             <span class="specialty-number">03</span>
-            <div class="specialty-icon">◉</div>
-            <h3>Fala</h3>
+            <div class="specialty-icon">☷</div>
+            <h3>Linguagem e Fala</h3>
             <p>
-              Cuidado com a produção dos sons da fala, a articulação
-              e a inteligibilidade da comunicação.
+              Atendimento fonoaudiológico voltado ao desenvolvimento
+              da linguagem, à produção dos sons da fala e à comunicação,
+              respeitando as necessidades de cada paciente.
             </p>
           </article>
 
           <article class="specialty-card reveal">
             <span class="specialty-number">04</span>
             <div class="specialty-icon">◇</div>
-            <h3>Motricidade orofacial</h3>
+            <h3>Motricidade Orofacial</h3>
             <p>
               Avaliação e acompanhamento das funções e dos movimentos
-              dos músculos da face e da boca, incluindo mastigação e deglutição.
+              dos músculos da face e da boca, incluindo aspectos
+              relacionados à mastigação e à deglutição.
             </p>
           </article>
 
@@ -1639,20 +1711,23 @@
             <div class="specialty-icon">✧</div>
             <h3>Aprendizagem</h3>
             <p>
-              Atuação nos aspectos da comunicação relacionados à aprendizagem,
-              com atenção às habilidades de linguagem oral e escrita.
+              Atuação nos aspectos da comunicação relacionados à
+              aprendizagem, com atenção às habilidades de linguagem
+              oral e escrita.
             </p>
           </article>
 
           <article class="specialty-card reveal">
-            <span class="specialty-number">+</span>
+            <span class="specialty-number">06</span>
             <div class="specialty-icon">♡</div>
-            <h3>Cada pessoa é única</h3>
+            <h3>Acompanhamento Individualizado</h3>
             <p>
-              O primeiro passo é conversar sobre suas necessidades e entender
-              qual orientação ou acompanhamento pode ser indicado.
+              Orientação de acordo com as necessidades de cada pessoa,
+              com atenção à comunicação, à audição e ao desenvolvimento.
+              Entre em contato para conhecer os atendimentos disponíveis.
             </p>
           </article>
+
         </div>
       </div>
     </section>
@@ -1660,8 +1735,10 @@
     <!-- A CLÍNICA -->
     <section class="section about" id="clinica">
       <div class="container about-grid">
+
         <div class="about-visual reveal">
           <div class="about-visual-bg"></div>
+
           <div class="about-visual-inner">
             <span class="visual-mark">✳</span>
             <h3>Escutar. Compreender. Cuidar.</h3>
@@ -1690,30 +1767,40 @@
               <span class="check">✓</span>
               <span>Escuta atenta e acolhimento</span>
             </div>
+
             <div class="about-point">
               <span class="check">✓</span>
               <span>Orientação individualizada</span>
             </div>
+
             <div class="about-point">
               <span class="check">✓</span>
               <span>Atendimento com atenção e respeito</span>
             </div>
+
             <div class="about-point">
               <span class="check">✓</span>
               <span>Localização central em Itapetininga</span>
             </div>
           </div>
 
-          <a class="btn btn-primary" href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20melhor%20a%20Fonoclin." target="_blank" rel="noopener noreferrer">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20melhor%20a%20Fonoclin."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Fale com a Fonoclin ↗
           </a>
         </div>
+
       </div>
     </section>
 
     <!-- PROFISSIONAL -->
     <section class="section professional" id="profissional">
       <div class="container professional-grid">
+
         <div class="professional-photo-wrap reveal">
           <img
             class="professional-photo"
@@ -1752,16 +1839,23 @@
             possibilidades de acompanhamento fonoaudiológico.
           </div>
 
-          <a class="btn btn-primary" href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20com%20a%20Dra.%20Elizabeth." target="_blank" rel="noopener noreferrer">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20com%20a%20Dra.%20Elizabeth."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Consultar atendimento ↗
           </a>
         </div>
+
       </div>
     </section>
 
     <!-- CHAMADA PARA AGENDAMENTO -->
     <section class="cta">
       <div class="container">
+
         <div class="cta-panel reveal">
           <div class="cta-content">
             <span class="eyebrow">Estamos à disposição</span>
@@ -1772,16 +1866,23 @@
             </p>
           </div>
 
-          <a class="btn btn-white" href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Fonoclin%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
+          <a
+            class="btn btn-white"
+            href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Fonoclin%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span>Conversar pelo WhatsApp</span> ↗
           </a>
         </div>
+
       </div>
     </section>
 
     <!-- CONTATO -->
     <section class="section contact" id="contato">
       <div class="container">
+
         <div class="section-heading reveal">
           <span class="eyebrow">Entre em contato</span>
           <h2>Será um prazer receber você.</h2>
@@ -1792,14 +1893,21 @@
         </div>
 
         <div class="contact-grid">
+
           <div class="contact-info">
+
             <div class="contact-card reveal">
               <div class="contact-icon">⌖</div>
               <div>
                 <h3>Endereço</h3>
                 <p>Rua São Vicente de Paula, 189 — Centro</p>
                 <p>Itapetininga — SP, CEP 18200-280</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Rua+S%C3%A3o+Vicente+de+Paula%2C+189%2C+Itapetininga%2C+SP" target="_blank" rel="noopener noreferrer">
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Rua+S%C3%A3o+Vicente+de+Paula%2C+189%2C+Itapetininga%2C+SP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Ver rota no Google Maps ↗
                 </a>
               </div>
@@ -1820,11 +1928,17 @@
               <div>
                 <h3>WhatsApp</h3>
                 <p>(15) 99613-7214</p>
-                <a href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20Fonoclin." target="_blank" rel="noopener noreferrer">
+
+                <a
+                  href="https://wa.me/5515996137214?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20Fonoclin."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Enviar uma mensagem ↗
                 </a>
               </div>
             </div>
+
           </div>
 
           <div class="map-wrap reveal">
@@ -1836,6 +1950,7 @@
               allowfullscreen
             ></iframe>
           </div>
+
         </div>
       </div>
     </section>
@@ -1845,9 +1960,10 @@
   <!-- RODAPÉ -->
   <footer class="footer">
     <div class="container">
+
       <div class="footer-top">
         <div>
-          <a href="#inicio" class="brand">
+          <a href="#inicio" class="brand" aria-label="Fonoclin - página inicial">
             <img
               src="logo.png"
               alt="Fonoclin"
@@ -1859,6 +1975,7 @@
               <span class="logo-subtitle">CLÍNICA DE FONOAUDIOLOGIA</span>
             </span>
           </a>
+
           <p class="footer-description">
             Cuidado, escuta e atenção à comunicação em Itapetininga.
           </p>
@@ -1877,6 +1994,7 @@
         <span>© <span id="currentYear"></span> Fonoclin. Todos os direitos reservados.</span>
         <span>Desenvolvido com <strong>cuidado</strong> e atenção aos detalhes.</span>
       </div>
+
     </div>
   </footer>
 
@@ -1901,8 +2019,13 @@
 
     menuToggle.addEventListener("click", () => {
       const isOpen = mainNav.classList.toggle("open");
+
       menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Fechar menu" : "Abrir menu"
+      );
+
       menuToggle.textContent = isOpen ? "×" : "☰";
     });
 
@@ -1917,9 +2040,10 @@
     });
 
     // Ano atualizado automaticamente
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
 
-    // Mostra um aviso visual caso a foto da profissional não seja encontrada
+    // Aviso visual caso a foto da profissional não seja encontrada
     const draPhoto = document.getElementById("draPhoto");
     const draPlaceholder = document.getElementById("draPlaceholder");
 
