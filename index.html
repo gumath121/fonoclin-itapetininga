@@ -465,30 +465,32 @@
       padding: 7px 10px;
       font-weight: 800;
     }
-
+    
     .hero-card-art {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 150px;
-      color: var(--blue);
-      font-size: 100px;
       position: relative;
+      overflow: hidden;
+      border-radius: 18px;
     }
 
     .hero-card-art::before {
-      content: "";
-      position: absolute;
-      width: 130px;
-      height: 130px;
-      background: linear-gradient(135deg, #d8f7f1, #e2edff);
-      border-radius: 50%;
+      display: none;
     }
 
-    .hero-card-art span {
+    .hero-card-art .hero-doctor-photo {
+      display: block;
       position: relative;
       z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      border-radius: 18px;
     }
+
 
     .hero-card h3 {
       color: var(--blue-dark);
